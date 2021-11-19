@@ -8,7 +8,7 @@ import { Product } from './product';
 @Injectable()
 export class ProductService {
   private _albumUrl: string = '../assets/album.json';
-  private _productService: string = '../assets/products.json'
+  private _productsUrl: string = '../assets/products.json'
   constructor(private _http: HttpClient) { }
 
   public getAlbum(id: number): Observable<Album>{
@@ -22,7 +22,7 @@ export class ProductService {
   }
 
   public getProducts(): Observable<Product[]>{
-    return this._http.get<Product[]>(this._productService,{
+    return this._http.get<Product[]>(this._productsUrl,{
       observe: 'response'
     }).pipe(map(
       (response) => {
