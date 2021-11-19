@@ -6,3 +6,10 @@ export interface Album {
   coverImage: string;
   tracks: Track[];
 }
+
+export interface Album {
+  id: number;
+  artist: string;
+  album : Album;
+  l?: string;
+}
